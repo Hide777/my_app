@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+  <style>
+  div { color:red; }
+  select { color: blue; font-size: 200%; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+  <select name="sweets" multiple="multiple">
+    <option>チョコレート</option>
+    <option selected="selected">キャンディ</option>
+    <option>タフィー</option>
+    <option selected="selected">キャラメル</option>
+    <option>ファッジ</option>
+    <option>クッキー</option>
+  </select>
+  <div></div>
+  <p>
+  ※タフィーとファッジはキャンディの一種。
+  </p>
+<script>
+    $("select").change(function () {
+      var str = "";
+      $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+          });
+      $("div").text(str);
+    })
+    .change();
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<%= number_field_tag 'quantity', 5, in: 1...10 %>
+
+<form method="post" action="gauge">
+
+	<div class="category1"></div>
+	
+	<p>
+	<select size=1 name="example1">
+	<% @gauge.each do |f| %>
+	<option value="<%= f.size %>"><%= f.size %></option>
+    <% end %>
+	</select>
+	</p>
+	
+	<p>
+	<input class="btn btn-large btn-primary" type="submit" value="送信する">
+	</p>
+</form>
+
+<dev>
+</dev>
+
+
+
+<div class="row">
+<div class="span8 offset2">
+	
+<table class="table table-bordered table-striped" >	
+	<tr>
+	<th><div class="center">呼び径</div></th>
+	<th><div class="center">区分</div></th>
+	<th><div class="center">等級</div></th>
+	<th><div class="center">管理番号</div></th>
+	<th><div class="center">場所</div></th>	
+	</tr>
+	
+<% @gauge.each do |f| %>
+	<tr>
+	<td><%= f.size %></td>
+	<td><%= f.div %></td>
+	<td><div class="center"><%= f.clas %></div></td>
+	<td><%= f.serial %></td>
+	<td><div class="center"><%= f.place %></div></td>
+	</tr>
+<% end %>
+</table>
+
+ params[:example1] 
+
+</div>
+</div>
+
+
+
